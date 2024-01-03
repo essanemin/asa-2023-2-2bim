@@ -1,8 +1,12 @@
 # DNS
 
+O DNS converte nomes de domínio, como www.example.com, em endereços IP correspondentes, como 192.168.1.1. 
+
+O DNS organiza os nomes de domínio em uma estrutura hierárquica, com domínios de nível superior (TLDs, como .com, .org) no topo, seguidos por domínios de segundo nível e assim por diante. 
+
 ## Instalação
 
-sudo apt-get install bind9 bind9utils bind9-doc
+Foi feita uma conexão por meio do samba entre um cliente Windows e um servidor Linux Alpine.
 
 ## Configuração
 
@@ -15,88 +19,36 @@ Cinco registros (4 pontos cada):
 
 ---------------------------------------------------------------------------------
 
-sudo nano /etc/default/bind9:
+Visão geral do Gerenciador de DNS
 
-- . . .
-OPTIONS="-u bind -4"
+[![dnsgeral](https://i.im.ge/2024/01/03/xeG8t9.dnsgeral.png)](https://im.ge/i/xeG8t9)
 
-sudo systemctl restart bind9
+A máquina xarope de ip 192.168.18.254, está sendo utilizada como gateway e servidor dns para a máquina Windows.
 
-sudo nano /etc/bind/named.conf.options:
+### Registros do tipo A
 
-- options {
-    directory "/var/cache/bind";
+[![marley2222.png](https://i.im.ge/2024/01/03/3MuCWL.marley2222-png.png)](https://im.ge/i/3MuCWL)
 
-    // Forwarders para servidores DNS públicos do Google
-    forwarders {
-        8.8.8.8;
-        8.8.4.4;
-    };
+[![propriedades](https://i.im.ge/2024/01/03/xeyFPM.propriedades.png)](https://im.ge/i/xeyFPM)
 
-    // Permitir consultas recursivas para clientes confiáveis
-    recursion yes;
+[![torre](https://i.im.ge/2024/01/03/xeRYxS.torre.png)](https://im.ge/i/xeRYxS)
 
-    // Definir uma acl para endereços IP confiáveis
-    acl "trusted" {
-        localhost;
-        192.168.1.0/24;  // Substitua pelo seu intervalo de rede
-    };
+### Registros do tipo CNAME
 
-    // Opções adicionais de segurança
-    allow-query { any; };
-    allow-recursion { trusted; };
-    allow-transfer { none; };
+[![www](https://i.im.ge/2024/01/03/xe2xkW.www.png)](https://im.ge/i/xe2xkW)
 
-    // Limitar o tamanho do cache
-    max-cache-size 100M;
-
-    // Logging
-    logging {
-        channel default_syslog {
-            syslog daemon;
-            severity dynamic;
-        };
-        category default {
-            default_syslog;
-        };
-    };
-};
-
-
-nano /etc/bind/named.conf.local:
-
-- zone "example.com" {
-    type master;
-    file "/etc/bind/db.example.com";
-};
-
-
-nano /etc/bind/db.example.com:
-
-$TTL 604800
-@       IN      SOA     ns1.example.com. admin.example.com. (
-                    2022122501      ; Serial
-                    604800          ; Refresh
-                    86400           ; Retry
-                    2419200         ; Expire
-                    604800 )        ; Negative Cache TTL
-
-@       IN      NS      ns1.example.com.
-@       IN      A       192.168.1.10
-@       IN      A       192.168.1.20
-@       IN      A       192.168.1.30
-www     IN      CNAME   example.com.
-docs    IN      CNAME   example.com.
-
-
-sudo nano /etc/resolv.conf:
-
-- nameserver 127.0.0.1
-
-Checar a sintaxe: "named-checkconf"
-
-sudo service bind9 restart
+[![docs](https://i.im.ge/2024/01/03/xe2pj6.docs.png)](https://im.ge/i/xe2pj6)
 
 ## Teste
 
+Ping feito para os endereços tipo CNAME
 
+[![cname](https://i.im.ge/2024/01/03/xe13g9.cname.png)](https://im.ge/i/xe13g9)
+
+Ping para os endereços tipo A
+
+[![marley](https://i.im.ge/2024/01/03/xeGyFa.marley.png)](https://im.ge/i/xeGyFa)
+
+[![ifpar](https://i.im.ge/2024/01/03/xetFlT.ifpar.png)](https://im.ge/i/xetFlT)
+
+[![paris](https://i.im.ge/2024/01/03/xeRXSF.paris.png)](https://im.ge/i/xeRXSF)

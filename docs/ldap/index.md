@@ -1,8 +1,10 @@
 # LDAP
 
+O LDAP é um protocolo de comunicação padrão utilizado para acessar e gerenciar serviços de diretório. Muitas aplicações, como servidores de e-mail, servidores de autenticação, serviços de diretórios corporativos, entre outros, podem integrar-se ao LDAP para acessar e gerenciar informações de diretório.
+
 ## Instalação
 
-sudo apt-get install slapd ldap-utils
+Esse serviço foi realizado utilizando o samba como base. Para instalar o samba o comando `apk add samba` é utilizado.
 
 ## Configuração
 
@@ -12,76 +14,26 @@ Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.
 - Mover o grupo `sobrenome1` e seus membros para a OU `vendedores`;
 - Mover os grupo `sobrenome2` e seus membros para a OU `rh`.
 
-sudo dpkg-reconfigure slapd
-    Escolha o modo de configuração (MDB é uma boa opção moderna).
-    Insira o nome de domínio (dc=example,dc=com).
+-------------------------------------------------------------------
 
-criar um ldif "ous.ldif" em /etc/ldap:
+Criação das OUs "vendedores" e "rh".
 
-dn: ou=vendedores,dc=example,dc=com
-objectClass: organizationalUnit
-ou: vendedores
+[![ous](https://i.im.ge/2024/01/03/3MSjdh.ous.png)](https://im.ge/i/3MSjdh)
 
-dn: ou=rh,dc=example,dc=com
-objectClass: organizationalUnit
-ou: rh
+A função "Mover..." permitiu tirar os usuários e o grupo da OU norte para as novas OUs rh e vendedores.
 
-#MEMBROS (membros.ldif)
+[![mover](https://i.im.ge/2024/01/03/3M0vzC.mover.png)](https://im.ge/i/3M0vzC)
 
-#Membros para o grupo sobrenome1 na OU vendedores
-dn: cn=usuario1,ou=people,dc=example,dc=com
-objectClass: inetOrgPerson
-cn: usuario1
-sn: sobrenome1
-memberOf: cn=sobrenome1,ou=grupos,dc=example,dc=com
+Sobrenome Alves e seus membros movidos para a OU rh.
 
-#Membros para o grupo sobrenome2 na OU rh
-dn: cn=usuario2,ou=people,dc=example,dc=com
-objectClass: inetOrgPerson
-cn: usuario2
-sn: sobrenome2
-memberOf: cn=sobrenome2,ou=grupos,dc=example,dc=com
+[![prova](https://i.im.ge/2024/01/03/3MSCIp.prova.png)](https://im.ge/i/3MSCIp)
 
-#comando p/adicionar os membros 
-ldapadd -x -D "cn=admin,dc=example,dc=com" -W -f membros.ldif
+Sobrenome Mesquita e seus membros movidos para a OU vendedores.
 
-#verificar se os membros foram adicionados corretamente 
-ldapsearch -x -H ldap://localhost:389 -b "dc=example,dc=com" -D "cn=admin,dc=example,dc=com" -W -s sub "(objectClass=*)"
-
-#MOVER GRUPOS (movegroup.ldif)
-
-#Mover sobrenome1 para a OU vendedores
-dn: cn=sobrenome1,ou=grupos,dc=example,dc=com
-changetype: modrdn
-newrdn: cn=sobrenome1
-deleteoldrdn: 1
-newsuperior: ou=vendedores,dc=example,dc=com
-
-#Mover sobrenome2 para a OU rh
-dn: cn=sobrenome2,ou=grupos,dc=example,dc=com
-changetype: modrdn
-newrdn: cn=sobrenome2
-deleteoldrdn: 1
-newsuperior: ou=rh,dc=example,dc=com
-
-#Mover membros de sobrenome1 para a OU vendedores
-dn: cn=usuario1,ou=people,dc=example,dc=com
-changetype: modrdn
-newrdn: cn=usuario1
-deleteoldrdn: 1
-newsuperior: ou=vendedores,dc=example,dc=com
-
-#Mover membros de sobrenome2 para a OU rh
-dn: cn=usuario2,ou=people,dc=example,dc=com
-changetype: modrdn
-newrdn: cn=usuario2
-deleteoldrdn: 1
-newsuperior: ou=rh,dc=example,dc=com
-
-
-#Em seguida, execute o seguinte comando para aplicar as alterações:
-ldapmodify -x -D cn=admin,dc=example,dc=com -W -f move_groups.ldif
+[![vendedores](https://i.im.ge/2024/01/03/3MSbPm.vendedores.png)](https://im.ge/i/3MSbPm)
 
 ## Teste
 
+[![pasta](https://i.im.ge/2024/01/03/3MS8uW.pasta.png)](https://im.ge/i/3MS8uW)
 
+[![pasta3333](https://i.im.ge/2024/01/03/3M756a.pasta3333.png)](https://im.ge/i/3M756a)

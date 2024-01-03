@@ -1,9 +1,12 @@
 # DHCP
 
+O DHCP é um protocolo de rede utilizado para atribuir dinamicamente configurações de rede a dispositivos quando eles se conectam a uma rede. Além do endereço IP, o DHCP fornece informações como o endereço do gateway padrão.
 
 ## Instalação
 
-apt-get install isc-dhcp-server
+Utilizei o Linux Alpine como servidor para um cliente Windows.
+
+O comando utilizado foi `apk add dnsmasq`.
 
 ## Configuração
 
@@ -14,36 +17,41 @@ Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.
 
 ---------------------------------------------------------------------------------
 
-Verificar endereçamento IP atual das interfaces de rede "ifconfig"
+Configurações do arquivo `/etc/dnsmasq.d/asa.conf`:
 
-nano /etc/systemd/network:
+[![NOVO](https://i.im.ge/2024/01/03/3M8OJz.NOVO.png)](https://im.ge/i/3M8OJz)
 
+Arquivo `/etc/network/interfaces`:
 
-Utilizar o "reboot"
+[![interfaces](https://i.im.ge/2023/12/30/x825q0.interfaces.png)](https://im.ge/i/x825q0)
 
-nano /etc/dhcp/dhcpd.conf:
+Após isso, pare o samba através do comando `rc-service samba stop`.
 
-authoritative;
+Comando para reiniciar o dnsmasq `rc-service dnsmasq restart`.
 
-subnet 10.147.58.0 netmask 255.255.255.0 {
-    range 10.147.58.100 10.147.58.200;
-    option routers 10.147.58.194;
-    option domain-name-servers 8.8.8.8, 8.8.4.4;
-    option domain-name "daymesquita.com";
+Altere as permissões do arquivo /var/log/.
 
-    host pc1 {
-        fixed-address 10.147.58.10;
-    }
+Uma opção é usando o comando `chmod 777 /var/log/`, por exemplo.
 
-    host pc2 {
-        fixed-address 10.147.58.20;
-    }
-}
+No Windows, mude as configurações para que o dhcp fique ativado.
 
-
-Ao final, usar o "sudo systemctl restart isc-dhcp-server" e também "etc/init.d/isc-dhcp-server start".
-
-reiniciar as interfaces de rede com ifdown e ifup.
+[![automatico](https://i.im.ge/2023/12/30/x8DTaa.automatico.png)](https://im.ge/i/x8DTaa)
 
 ## Teste
 
+Arquivo de log sendo atualizado:
+
+[![tailflog](https://i.im.ge/2023/12/30/xgkimG.tailflog.png)](https://im.ge/i/xgkimG)
+
+O comando `ipconfig /release` deve ser executado para deletar os IPs já atribuídos à maquina anteriormente e `ipconfig /renew` para atribuir novos IPs de acordo com a configuração planejada.
+
+
+Máquina 1
+
+[![opaaa](https://i.im.ge/2024/01/03/3M8MfL.opaaa.png)](https://im.ge/i/3M8MfL)
+
+Máquina 2
+
+[![renew](https://i.im.ge/2024/01/03/3M8X8a.renew.png)](https://im.ge/i/3M8X8a)
+
+Os IPs foram atribuídos fora do intervalo (range).
