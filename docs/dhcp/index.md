@@ -19,7 +19,7 @@ Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.
 
 Configurações do arquivo `/etc/dnsmasq.d/asa.conf`:
 
-
+![Alt text](image.png)
 
 Arquivo `/etc/network/interfaces`:
 
