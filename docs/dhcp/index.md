@@ -23,7 +23,7 @@ Configurações do arquivo `/etc/dnsmasq.d/asa.conf`:
 
 Arquivo `/etc/network/interfaces`:
 
-[![interfaces](https://i.im.ge/2023/12/30/x825q0.interfaces.png)](https://im.ge/i/x825q0)
+![Alt text](image-1.png)
 
 Após isso, pare o samba através do comando `rc-service samba stop`.
 
@@ -35,7 +35,7 @@ Uma opção é usando o comando `chmod 777 /var/log/`, por exemplo.
 
 No Windows, mude as configurações para que o dhcp fique ativado.
 
-[![automatico](https://i.im.ge/2023/12/30/x8DTaa.automatico.png)](https://im.ge/i/x8DTaa)
+![Alt text](automatico.png)
 
 ## Teste
 
