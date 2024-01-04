@@ -21,34 +21,34 @@ Cinco registros (4 pontos cada):
 
 Visão geral do Gerenciador de DNS
 
-[![dnsgeral](https://i.im.ge/2024/01/03/xeG8t9.dnsgeral.png)](https://im.ge/i/xeG8t9)
+![Alt text](dnsgeral.png)
 
 A máquina xarope de ip 192.168.18.254, está sendo utilizada como gateway e servidor dns para a máquina Windows.
 
 ### Registros do tipo A
 
-[![marley2222.png](https://i.im.ge/2024/01/03/3MuCWL.marley2222-png.png)](https://im.ge/i/3MuCWL)
+![Alt text](marley2222.png.png)
 
-[![propriedades](https://i.im.ge/2024/01/03/xeyFPM.propriedades.png)](https://im.ge/i/xeyFPM)
+![Alt text](propriedades.png)
 
-[![torre](https://i.im.ge/2024/01/03/xeRYxS.torre.png)](https://im.ge/i/xeRYxS)
+![Alt text](torre.png)
 
 ### Registros do tipo CNAME
 
-[![www](https://i.im.ge/2024/01/03/xe2xkW.www.png)](https://im.ge/i/xe2xkW)
+![Alt text](www.png)
 
-[![docs](https://i.im.ge/2024/01/03/xe2pj6.docs.png)](https://im.ge/i/xe2pj6)
+![Alt text](docs.png)
 
 ## Teste
 
 Ping feito para os endereços tipo CNAME
 
-[![cname](https://i.im.ge/2024/01/03/xe13g9.cname.png)](https://im.ge/i/xe13g9)
+![Alt text](cname.png)
 
 Ping para os endereços tipo A
 
-[![marley](https://i.im.ge/2024/01/03/xeGyFa.marley.png)](https://im.ge/i/xeGyFa)
+![Alt text](marley.png)
 
-[![ifpar](https://i.im.ge/2024/01/03/xetFlT.ifpar.png)](https://im.ge/i/xetFlT)
+![Alt text](ifpar.png)
 
-[![paris](https://i.im.ge/2024/01/03/xeRXSF.paris.png)](https://im.ge/i/xeRXSF)
+![Alt text](paris.png)
