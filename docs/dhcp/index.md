@@ -41,17 +41,17 @@ No Windows, mude as configurações para que o dhcp fique ativado.
 
 Arquivo de log sendo atualizado:
 
-[![tailflog](https://i.im.ge/2023/12/30/xgkimG.tailflog.png)](https://im.ge/i/xgkimG)
+![Alt text](tailflog.png)
 
 O comando `ipconfig /release` deve ser executado para deletar os IPs já atribuídos à maquina anteriormente e `ipconfig /renew` para atribuir novos IPs de acordo com a configuração planejada.
 
 
 Máquina 1
 
-[![opaaa](https://i.im.ge/2024/01/03/3M8MfL.opaaa.png)](https://im.ge/i/3M8MfL)
+![Alt text](opaaa.png)
 
 Máquina 2
 
-[![renew](https://i.im.ge/2024/01/03/3M8X8a.renew.png)](https://im.ge/i/3M8X8a)
+![Alt text](renew.png)
 
 Os IPs foram atribuídos fora do intervalo (range).
