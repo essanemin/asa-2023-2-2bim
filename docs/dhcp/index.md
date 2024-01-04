@@ -19,7 +19,7 @@ Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.
 
 Configurações do arquivo `/etc/dnsmasq.d/asa.conf`:
 
-[![NOVO](https://i.im.ge/2024/01/03/3M8OJz.NOVO.png)](https://im.ge/i/3M8OJz)
+
 
 Arquivo `/etc/network/interfaces`:
 
