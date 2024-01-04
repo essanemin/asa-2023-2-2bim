@@ -159,11 +159,34 @@
             <div class="section">
               
                 <h1 id="proxy">PROXY</h1>
+<p>Um servidor proxy desempenha várias funções em uma rede, atuando como intermediário entre os clientes e os servidores. O servidor proxy pode ser configurado para impor políticas de controle de acesso, restringindo ou permitindo o acesso a determinados recursos da Internet.</p>
 <h2 id="instalacao">Instalação</h2>
+<p>O comando para instalar o proxy é <code>apt-get install squid</code>.</p>
 <h2 id="configuracao">Configuração</h2>
 <p>Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.</p>
 <p>Fazer a configuração de 4 ACLs distintas, conforme a atividade passada em sala de aula.</p>
+<hr />
+<p>Os testes desse serviço foram realizados na máquina real.</p>
+<p>Por segurança, uma cópia do arquivo <code>/squid.conf</code> foi criada, chamado de <code>/squid.conf.backup</code>.</p>
+<p><a href="https://im.ge/i/3XNX18"><img alt="backup" src="https://i.im.ge/2024/01/03/3XNX18.backup.png" /></a></p>
+<p>Configuração das 4 ACLs do arquivo <code>/etc/squid/squid.conf</code>:</p>
+<p><a href="https://im.ge/i/3XWjEx"><img alt="acl" src="https://i.im.ge/2024/01/04/3XWjEx.acl.png" /></a></p>
+<p>Para fazer a ACL do url_regex fiz a seguinte configuração no arquivo <code>registro.txt</code>:</p>
+<p><a href="https://im.ge/i/3XWigc"><img alt="registrostxt" src="https://i.im.ge/2024/01/04/3XWigc.registrostxt.png" /></a></p>
+<p>Reiniciar o serviço Squid para aplicar as alterações com o comando <code>service squid restart</code>.</p>
+<p>Configuração do Firefox para receber o serviço proxy com o IP da máquina real:</p>
+<p><a href="https://im.ge/i/3XNpvp"><img alt="conf" src="https://i.im.ge/2024/01/03/3XNpvp.conf.png" /></a></p>
 <h2 id="teste">Teste</h2>
+<h3 id="o-dominio-do-govbr-foi-bloqueado">O domínio do gov.br foi bloqueado.</h3>
+<p><a href="https://im.ge/i/3XY0ef"><img alt="gov" src="https://i.im.ge/2024/01/04/3XY0ef.gov.png" /></a></p>
+<h3 id="o-navegador-firefox-foi-bloqueado">O navegador Firefox foi bloqueado.</h3>
+<p><a href="https://im.ge/i/xxGnRx"><img alt="firefoxbloqueado" src="https://i.im.ge/2023/12/29/xxGnRx.firefoxbloqueado.png" /></a></p>
+<h3 id="todos-os-sites-foram-bloqueados-devido-a-hora">Todos os sites foram bloqueados devido a hora.</h3>
+<p><a href="https://im.ge/i/3X31sW"><img alt="hora" src="https://i.im.ge/2024/01/03/3X31sW.hora.png" /></a></p>
+<h3 id="o-facebook-foi-bloqueado">O facebook  foi bloqueado.</h3>
+<p><a href="https://im.ge/i/3XWyrz"><img alt="face" src="https://i.im.ge/2024/01/04/3XWyrz.face.png" /></a></p>
+<p>Registro dos arquivos de log:</p>
+<p><a href="https://im.ge/i/3XZAzm"><img alt="log" src="https://i.im.ge/2024/01/04/3XZAzm.log.png" /></a></p>
               
             </div>
           </div>

@@ -159,17 +159,36 @@
             <div class="section">
               
                 <h1 id="dhcp">DHCP</h1>
+<p>O DHCP é um protocolo de rede utilizado para atribuir dinamicamente configurações de rede a dispositivos quando eles se conectam a uma rede. Além do endereço IP, o DHCP fornece informações como o endereço do gateway padrão.</p>
 <h2 id="instalacao">Instalação</h2>
-<p>oioioi
-print(hello)
-print("oi mundo")</p>
+<p>Utilizei o Linux Alpine como servidor para um cliente Windows.</p>
+<p>O comando utilizado foi <code>apk add dnsmasq</code>.</p>
 <h2 id="configuracao">Configuração</h2>
 <p>Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.</p>
 <ul>
 <li>Distribuir um intervalo (<em>range</em> em inglês) de endereços IP; (15 pontos)</li>
 <li>Reservar 2 endereços (IP fixo) fora do intervalo do item anterior. (5 pontos)</li>
 </ul>
+<hr />
+<p>Configurações do arquivo <code>/etc/dnsmasq.d/asa.conf</code>:</p>
+<p><a href="https://im.ge/i/3M8OJz"><img alt="NOVO" src="https://i.im.ge/2024/01/03/3M8OJz.NOVO.png" /></a></p>
+<p>Arquivo <code>/etc/network/interfaces</code>:</p>
+<p><a href="https://im.ge/i/x825q0"><img alt="interfaces" src="https://i.im.ge/2023/12/30/x825q0.interfaces.png" /></a></p>
+<p>Após isso, pare o samba através do comando <code>rc-service samba stop</code>.</p>
+<p>Comando para reiniciar o dnsmasq <code>rc-service dnsmasq restart</code>.</p>
+<p>Altere as permissões do arquivo /var/log/.</p>
+<p>Uma opção é usando o comando <code>chmod 777 /var/log/</code>, por exemplo.</p>
+<p>No Windows, mude as configurações para que o dhcp fique ativado.</p>
+<p><a href="https://im.ge/i/x8DTaa"><img alt="automatico" src="https://i.im.ge/2023/12/30/x8DTaa.automatico.png" /></a></p>
 <h2 id="teste">Teste</h2>
+<p>Arquivo de log sendo atualizado:</p>
+<p><a href="https://im.ge/i/xgkimG"><img alt="tailflog" src="https://i.im.ge/2023/12/30/xgkimG.tailflog.png" /></a></p>
+<p>O comando <code>ipconfig /release</code> deve ser executado para deletar os IPs já atribuídos à maquina anteriormente e <code>ipconfig /renew</code> para atribuir novos IPs de acordo com a configuração planejada.</p>
+<p>Máquina 1</p>
+<p><a href="https://im.ge/i/3M8MfL"><img alt="opaaa" src="https://i.im.ge/2024/01/03/3M8MfL.opaaa.png" /></a></p>
+<p>Máquina 2</p>
+<p><a href="https://im.ge/i/3M8X8a"><img alt="renew" src="https://i.im.ge/2024/01/03/3M8X8a.renew.png" /></a></p>
+<p>Os IPs foram atribuídos fora do intervalo (range).</p>
               
             </div>
           </div>

@@ -159,7 +159,10 @@
             <div class="section">
               
                 <h1 id="dns">DNS</h1>
+<p>O DNS converte nomes de domínio, como www.example.com, em endereços IP correspondentes, como 192.168.1.1. </p>
+<p>O DNS organiza os nomes de domínio em uma estrutura hierárquica, com domínios de nível superior (TLDs, como .com, .org) no topo, seguidos por domínios de segundo nível e assim por diante. </p>
 <h2 id="instalacao">Instalação</h2>
+<p>Foi feita uma conexão por meio do samba entre um cliente Windows e um servidor Linux Alpine.</p>
 <h2 id="configuracao">Configuração</h2>
 <p>Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.</p>
 <p>Cinco registros (4 pontos cada):</p>
@@ -167,7 +170,24 @@
 <li>3 do tipo A (Endereços);</li>
 <li>2 do tipo CNAME (<code>www</code> e <code>docs</code>);</li>
 </ul>
+<hr />
+<p>Visão geral do Gerenciador de DNS</p>
+<p><a href="https://im.ge/i/xeG8t9"><img alt="dnsgeral" src="https://i.im.ge/2024/01/03/xeG8t9.dnsgeral.png" /></a></p>
+<p>A máquina xarope de ip 192.168.18.254, está sendo utilizada como gateway e servidor dns para a máquina Windows.</p>
+<h3 id="registros-do-tipo-a">Registros do tipo A</h3>
+<p><a href="https://im.ge/i/3MuCWL"><img alt="marley2222.png" src="https://i.im.ge/2024/01/03/3MuCWL.marley2222-png.png" /></a></p>
+<p><a href="https://im.ge/i/xeyFPM"><img alt="propriedades" src="https://i.im.ge/2024/01/03/xeyFPM.propriedades.png" /></a></p>
+<p><a href="https://im.ge/i/xeRYxS"><img alt="torre" src="https://i.im.ge/2024/01/03/xeRYxS.torre.png" /></a></p>
+<h3 id="registros-do-tipo-cname">Registros do tipo CNAME</h3>
+<p><a href="https://im.ge/i/xe2xkW"><img alt="www" src="https://i.im.ge/2024/01/03/xe2xkW.www.png" /></a></p>
+<p><a href="https://im.ge/i/xe2pj6"><img alt="docs" src="https://i.im.ge/2024/01/03/xe2pj6.docs.png" /></a></p>
 <h2 id="teste">Teste</h2>
+<p>Ping feito para os endereços tipo CNAME</p>
+<p><a href="https://im.ge/i/xe13g9"><img alt="cname" src="https://i.im.ge/2024/01/03/xe13g9.cname.png" /></a></p>
+<p>Ping para os endereços tipo A</p>
+<p><a href="https://im.ge/i/xeGyFa"><img alt="marley" src="https://i.im.ge/2024/01/03/xeGyFa.marley.png" /></a></p>
+<p><a href="https://im.ge/i/xetFlT"><img alt="ifpar" src="https://i.im.ge/2024/01/03/xetFlT.ifpar.png" /></a></p>
+<p><a href="https://im.ge/i/xeRXSF"><img alt="paris" src="https://i.im.ge/2024/01/03/xeRXSF.paris.png" /></a></p>
               
             </div>
           </div>

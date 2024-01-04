@@ -159,7 +159,9 @@
             <div class="section">
               
                 <h1 id="smb">SMB</h1>
+<p>O Samba permite que sistemas operacionais como Linux atuem como servidores ou clientes em uma rede que utiliza o protocolo SMB/CIFS, predominantemente associado a sistemas operacionais Windows.</p>
 <h2 id="instalacao">Instalação</h2>
+<p>Foi feita uma integração do Linux Alpine com o Windows 7. Realize o comando <code>apk add samba</code> para instalar o samba.</p>
 <h2 id="configuracao">Configuração</h2>
 <p>Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.</p>
 <ol>
@@ -167,7 +169,24 @@
 <li>Criar 4 usuários, dois para cada um dos sobrenomes;</li>
 <li>Compartilhar duas pastas com dois de seus sobrenome, compartilhado para o grupo com o sobrenome correspondente.</li>
 </ol>
+<hr />
+<p>Criação da conta Administrador:</p>
+<p><a href="https://im.ge/i/xxJpgr"><img alt="adm" src="https://i.im.ge/2023/12/29/xxJpgr.adm.png" /></a></p>
+<p>Configuração do domínio e atribução de IPv4:</p>
+<p><a href="https://im.ge/i/xxJh1G"><img alt="dominioip" src="https://i.im.ge/2023/12/29/xxJh1G.dominioip.png" /></a></p>
+<p>Configuração do arquivo <code>/etc/samba/smb.conf</code>:</p>
+<p><a href="https://im.ge/i/xxVctf"><img alt="smb-conf" src="https://i.im.ge/2023/12/29/xxVctf.smb-conf.png" /></a></p>
+<p>Criação de grupos e usuários:</p>
+<p><a href="https://im.ge/i/xxJA29"><img alt="groupuser" src="https://i.im.ge/2023/12/29/xxJA29.groupuser.png" /></a></p>
+<p>Cada sobrenome está em um grupo diferente:</p>
+<p><a href="https://im.ge/i/3Mioif"><img alt="samba" src="https://i.im.ge/2024/01/03/3Mioif.samba.png" /></a></p>
+<p>Cada grupo só consegue acessar a pasta na qual está inserido.</p>
+<p><a href="https://im.ge/i/xxJBvc"><img alt="acessorestrito" src="https://i.im.ge/2023/12/29/xxJBvc.acessorestrito.png" /></a></p>
 <h2 id="teste">Teste</h2>
+<p>Listando os 2 grupos criados através do terminal:</p>
+<p><a href="https://im.ge/i/xxJIAc"><img alt="gruposlista" src="https://i.im.ge/2023/12/29/xxJIAc.gruposlista.png" /></a></p>
+<p>Listando os membros dos 2 grupos criados através do terminal:</p>
+<p><a href="https://im.ge/i/xxVCTC"><img alt="samba-tool_listmembers" src="https://i.im.ge/2023/12/29/xxVCTC.samba-tool-listmembers.png" /></a></p>
               
             </div>
           </div>
