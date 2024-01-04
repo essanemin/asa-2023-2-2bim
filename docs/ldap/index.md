@@ -18,22 +18,22 @@ Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.
 
 Criação das OUs "vendedores" e "rh".
 
-[![ous](https://i.im.ge/2024/01/03/3MSjdh.ous.png)](https://im.ge/i/3MSjdh)
+![Alt text](ous.png)
 
 A função "Mover..." permitiu tirar os usuários e o grupo da OU norte para as novas OUs rh e vendedores.
 
-[![mover](https://i.im.ge/2024/01/03/3M0vzC.mover.png)](https://im.ge/i/3M0vzC)
+![Alt text](mover.png)
 
 Sobrenome Alves e seus membros movidos para a OU rh.
 
-[![prova](https://i.im.ge/2024/01/03/3MSCIp.prova.png)](https://im.ge/i/3MSCIp)
+![Alt text](prova.png)
 
 Sobrenome Mesquita e seus membros movidos para a OU vendedores.
 
-[![vendedores](https://i.im.ge/2024/01/03/3MSbPm.vendedores.png)](https://im.ge/i/3MSbPm)
+![Alt text](vendedores.png)
 
 ## Teste
 
-[![pasta](https://i.im.ge/2024/01/03/3MS8uW.pasta.png)](https://im.ge/i/3MS8uW)
+![Alt text](pasta.png)
 
-[![pasta3333](https://i.im.ge/2024/01/03/3M756a.pasta3333.png)](https://im.ge/i/3M756a)
+![Alt text](pasta3333.png)
