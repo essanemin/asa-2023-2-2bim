@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Dayane Mesquita">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>SMB - ASA: Serviços para 2º bimestre</title>
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SMB";
+    var mkdocs_page_input_path = "smb/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ASA: Serviços para 2º bimestre</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Serviços para o 2º bimestre</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Dhcp</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../dhcp/">DHCP</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Dns</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../dns/">DNS</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Ldap</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../ldap/">LDAP</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Proxy</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../proxy/">PROXY</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Smb</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">SMB</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#smb">SMB</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#instalacao">Instalação</a></li>
+        
+            <li><a class="toctree-l4" href="#configuracao">Configuração</a></li>
+        
+            <li><a class="toctree-l4" href="#teste">Teste</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ASA: Serviços para 2º bimestre</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Smb &raquo;</li>
+        
+      
+    
+    <li>SMB</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="smb">SMB</h1>
+<p>O Samba permite que sistemas operacionais como Linux atuem como servidores ou clientes em uma rede que utiliza o protocolo SMB/CIFS, predominantemente associado a sistemas operacionais Windows.</p>
+<h2 id="instalacao">Instalação</h2>
+<p>Foi feita uma integração do Linux Alpine com o Windows 7. Realize o comando <code>apk add samba</code> para instalar o samba.</p>
+<h2 id="configuracao">Configuração</h2>
+<p>Incluir o(s) nome(s) e o conteúdo do(s) arquivo(s) de configuração.</p>
+<ol>
+<li>Criar 2 grupos para dois de seus sobrenomes;</li>
+<li>Criar 4 usuários, dois para cada um dos sobrenomes;</li>
+<li>Compartilhar duas pastas com dois de seus sobrenome, compartilhado para o grupo com o sobrenome correspondente.</li>
+</ol>
+<hr />
+<p>Criação da conta Administrador:</p>
+<p><a href="https://im.ge/i/xxJpgr"><img alt="adm" src="https://i.im.ge/2023/12/29/xxJpgr.adm.png" /></a></p>
+<p>Configuração do domínio e atribução de IPv4:</p>
+<p><a href="https://im.ge/i/xxJh1G"><img alt="dominioip" src="https://i.im.ge/2023/12/29/xxJh1G.dominioip.png" /></a></p>
+<p>Configuração do arquivo <code>/etc/samba/smb.conf</code>:</p>
+<p><a href="https://im.ge/i/xxVctf"><img alt="smb-conf" src="https://i.im.ge/2023/12/29/xxVctf.smb-conf.png" /></a></p>
+<p>Criação de grupos e usuários:</p>
+<p><a href="https://im.ge/i/xxJA29"><img alt="groupuser" src="https://i.im.ge/2023/12/29/xxJA29.groupuser.png" /></a></p>
+<p>Cada sobrenome está em um grupo diferente:</p>
+<p><a href="https://im.ge/i/3Mioif"><img alt="samba" src="https://i.im.ge/2024/01/03/3Mioif.samba.png" /></a></p>
+<p>Cada grupo só consegue acessar a pasta na qual está inserido.</p>
+<p><a href="https://im.ge/i/xxJBvc"><img alt="acessorestrito" src="https://i.im.ge/2023/12/29/xxJBvc.acessorestrito.png" /></a></p>
+<h2 id="teste">Teste</h2>
+<p>Listando os 2 grupos criados através do terminal:</p>
+<p><a href="https://im.ge/i/xxJIAc"><img alt="gruposlista" src="https://i.im.ge/2023/12/29/xxJIAc.gruposlista.png" /></a></p>
+<p>Listando os membros dos 2 grupos criados através do terminal:</p>
+<p><a href="https://im.ge/i/xxVCTC"><img alt="samba-tool_listmembers" src="https://i.im.ge/2023/12/29/xxVCTC.samba-tool-listmembers.png" /></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../proxy/" class="btn btn-neutral" title="PROXY"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../proxy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
